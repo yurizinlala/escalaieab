@@ -312,4 +312,13 @@
     .menuGrid {
         grid-template-columns: 1fr;
     }
+
+    .adminBanner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .adminBannerText {
+        margin-bottom: var(--space-sm);
+    }
 }

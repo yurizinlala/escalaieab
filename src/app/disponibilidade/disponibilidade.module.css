@@ -466,3 +466,69 @@
         transform: scale(1);
     }
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    .calendarContainer {
+        padding: var(--space-sm);
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-sm);
+    }
+
+    .headerContent {
+        width: 100%;
+    }
+
+    .daysGrid,
+    .weekDays {
+        gap: 2px;
+    }
+
+    .dayCell {
+        font-size: 10px;
+        min-height: 40px;
+    }
+
+    .dayNumber {
+        font-size: 12px;
+    }
+
+    .dayType {
+        font-size: 7px;
+    }
+
+    .calendarCard {
+        padding: var(--space-sm);
+        /* Ensure it doesn't bleed */
+        max-width: 100%;
+    }
+
+    .eventBadge {
+        font-size: 5px;
+        padding: 0 2px;
+    }
+
+    .statsRow {
+        gap: var(--space-sm);
+    }
+
+    .statCard {
+        padding: var(--space-sm);
+    }
+
+    .statNumber {
+        font-size: var(--font-size-xl);
+    }
+
+    .monthTitle {
+        font-size: var(--font-size-base);
+    }
+
+    .legend {
+        justify-content: center;
+    }
+}
