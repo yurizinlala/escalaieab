@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/contexts/AuthContext';
 import { supabase, Event, Unavailability } from '@/lib/supabase';
+import { ArrowLeft, ChevronLeft, ChevronRight, Lightbulb, Save, CheckCircle } from 'lucide-react';
 import styles from './disponibilidade.module.css';
 
 type EventType = 'terca' | 'sabado' | 'domingo';
@@ -306,7 +307,7 @@ export default function DisponibilidadePage() {
         <div className={styles.calendarContainer}>
             <header className={styles.header}>
                 <Link href="/dashboard" className={styles.backButton}>
-                    ←
+                    <ArrowLeft size={24} />
                 </Link>
                 <div className={styles.headerContent}>
                     <h1 className={styles.headerTitle}>Disponibilidade</h1>
@@ -321,7 +322,7 @@ export default function DisponibilidadePage() {
                     onClick={goToPreviousMonth}
                     disabled={!canGoPrevious}
                 >
-                    ‹
+                    <ChevronLeft size={20} />
                 </button>
                 <span className={styles.monthTitle}>
                     {MONTHS[currentMonth.getMonth()]} {currentMonth.getFullYear()}
@@ -330,7 +331,7 @@ export default function DisponibilidadePage() {
                     className={styles.monthNavButton}
                     onClick={goToNextMonth}
                 >
-                    ›
+                    <ChevronRight size={20} />
                 </button>
             </div>
 
@@ -412,7 +413,7 @@ export default function DisponibilidadePage() {
 
             {/* Actions */}
             <div className={styles.actionsCard}>
-                <h3 className={styles.actionsTitle}>💡 Como funciona</h3>
+                <h3 className={styles.actionsTitle}><Lightbulb size={18} style={{ marginRight: 8 }} /> Como funciona</h3>
                 <p className={styles.actionsDescription}>
                     Clique nos dias com culto para alternar entre <strong>disponível</strong> (verde)
                     e <strong>indisponível</strong> (vermelho). Depois, salve suas alterações.
@@ -430,14 +431,14 @@ export default function DisponibilidadePage() {
                         </>
                     ) : (
                         <>
-                            💾 Salvar Disponibilidade
+                            <Save size={18} /> Salvar Disponibilidade
                         </>
                     )}
                 </button>
 
                 {showSaved && (
                     <div className={styles.savedMessage}>
-                        ✅ Disponibilidade salva com sucesso!
+                        <CheckCircle size={18} /> Disponibilidade salva com sucesso!
                     </div>
                 )}
             </div>

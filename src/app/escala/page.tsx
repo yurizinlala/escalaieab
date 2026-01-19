@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
+import { ArrowLeft, CalendarX, GraduationCap, HeartHandshake } from 'lucide-react';
 import styles from './escala.module.css';
 
 interface ScheduleItem {
@@ -81,7 +82,9 @@ export default function EscalaPage() {
     return (
         <div className={styles.container}>
             <header className={styles.header}>
-                <Link href="/dashboard" className={styles.backButton}>←</Link>
+                <Link href="/dashboard" className={styles.backButton}>
+                    <ArrowLeft size={24} />
+                </Link>
                 <h1 className={styles.title}>Escala de {currentDate.toLocaleString('pt-BR', { month: 'long' })}</h1>
             </header>
 
@@ -92,7 +95,9 @@ export default function EscalaPage() {
                 </div>
             ) : schedule.length === 0 ? (
                 <div className={styles.emptyState}>
-                    <div className={styles.emptyIcon}>📅</div>
+                    <div className={styles.emptyIcon}>
+                        <CalendarX size={48} />
+                    </div>
                     <h3>Nenhuma escala publicada</h3>
                     <p>A escala para este mês ainda não foi gerada ou publicada.</p>
                 </div>
@@ -116,7 +121,7 @@ export default function EscalaPage() {
                                         {group.items.map(item => (
                                             <div key={item.id} className={styles.assignment}>
                                                 <span className={styles.roleIcon}>
-                                                    {item.assigned_role === 'professor' ? '🎓' : '🤝'}
+                                                    {item.assigned_role === 'professor' ? <GraduationCap size={16} /> : <HeartHandshake size={16} />}
                                                 </span>
                                                 <span className={styles.volunteerName}>
                                                     {item.volunteer.name}

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 import { getSubstitutesAction, swapScheduleAction } from '@/app/actions';
+import { ArrowLeft, RotateCw } from 'lucide-react';
 import styles from './editar.module.css';
 
 interface ScheduleItem {
@@ -114,7 +115,9 @@ export default function EditarEscalaPage() {
     return (
         <div className={styles.container}>
             <header className={styles.header}>
-                <Link href="/admin" className={styles.backButton}>←</Link>
+                <Link href="/admin" className={styles.backButton}>
+                    <ArrowLeft size={24} />
+                </Link>
                 <h1 className={styles.title}>Editar Escala</h1>
             </header>
 
@@ -143,7 +146,9 @@ export default function EditarEscalaPage() {
                                             </div>
                                             <div className={styles.cardName}>{item.volunteer.name}</div>
                                         </div>
-                                        <div className={styles.swapIcon}>🔄</div>
+                                        <div className={styles.swapIcon}>
+                                            <RotateCw size={18} />
+                                        </div>
                                     </div>
                                 ))}
                             </div>

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { generateScheduleAction } from '@/app/actions';
+import { ArrowLeft, Rocket, AlertTriangle, CheckCircle, XCircle } from 'lucide-react';
 import styles from './gerar-escala.module.css';
 
 const MONTHS = [
@@ -68,7 +69,9 @@ export default function GerarEscalaPage() {
     return (
         <div className={styles.container}>
             <header className={styles.header}>
-                <Link href="/admin" className={styles.backButton}>←</Link>
+                <Link href="/admin" className={styles.backButton}>
+                    <ArrowLeft size={24} />
+                </Link>
                 <h1 className={styles.title}>Gerar Escala Automática</h1>
             </header>
 
@@ -95,7 +98,7 @@ export default function GerarEscalaPage() {
                 </div>
 
                 <div className={styles.infoBox}>
-                    <p>⚠️ <strong>Atenção:</strong> Ao gerar a escala, qualquer agendamento existente para este mês será removido e substituído.</p>
+                    <p><AlertTriangle size={16} style={{ display: 'inline', marginBottom: -2 }} /> <strong>Atenção:</strong> Ao gerar a escala, qualquer agendamento existente para este mês será removido e substituído.</p>
                 </div>
 
                 <button
@@ -109,7 +112,7 @@ export default function GerarEscalaPage() {
                             Gerando...
                         </>
                     ) : (
-                        '🚀 Iniciar Geração'
+                        <><Rocket size={18} /> Iniciar Geração</>
                     )}
                 </button>
             </div>

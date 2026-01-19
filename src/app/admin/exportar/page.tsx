@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
+import { ArrowLeft, MessageCircle, FileText } from 'lucide-react';
 import styles from './exportar.module.css';
 
 const MONTHS = [
@@ -211,7 +212,9 @@ export default function ExportarPage() {
     return (
         <div className={styles.container}>
             <header className={styles.header}>
-                <Link href="/admin" className={styles.backButton}>←</Link>
+                <Link href="/admin" className={styles.backButton}>
+                    <ArrowLeft size={24} />
+                </Link>
                 <h1 className={styles.title}>Exportar Escala</h1>
             </header>
 
@@ -239,12 +242,12 @@ export default function ExportarPage() {
 
                 <div className={styles.actions}>
                     <button className={styles.whatsappButton} onClick={copyWhatsApp} disabled={loading}>
-                        <span className={styles.icon}>📱</span>
+                        <MessageCircle size={18} />
                         Copiar para WhatsApp
                     </button>
 
                     <button className={styles.pdfButton} onClick={generatePDF} disabled={loading}>
-                        <span className={styles.icon}>📄</span>
+                        <FileText size={18} />
                         {loading ? 'Gerando...' : 'Baixar PDF da Escala'}
                     </button>
                 </div>
