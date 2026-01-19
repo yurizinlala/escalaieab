@@ -75,8 +75,8 @@ export default function LoginPage() {
         <div className={styles.loginContainer}>
             <div className={styles.loginCard}>
                 <div className={styles.logo}>
-                    <div className={styles.logoIcon}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 9.5V12a10 10 0 0 0 20 0V9.5" /><path d="M6.5 12A8 8 0 0 1 14 5.5a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1 8 8 0 0 1-7.5-6.5" /><path d="M10 10a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" /></svg>
+                    <div className={styles.logoIcon} style={{ fontSize: '48px', background: 'none', boxShadow: 'none' }}>
+                        ✨
                     </div>
                     <h1 className={styles.logoTitle}>Escala IEAB</h1>
                     <p className={styles.logoSubtitle}>Ministério Infantil</p>
@@ -151,7 +151,7 @@ export default function LoginPage() {
                 </form>
 
                 <p className={styles.footer}>
-                    Igreja Evangélica Avivamento Bíblico
+                    Desenvolvido com ❤️
                 </p>
             </div>
         </div>
