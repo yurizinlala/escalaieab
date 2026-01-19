@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
-import { Database } from '@/lib/database.types'; // We'll need to define this or use `any` for now if types aren't generated
+
 import { EventType, Role, Room } from './supabase';
 
 // Initialize Supabase client with Service Role Key for Admin operations
