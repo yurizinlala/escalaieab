@@ -106,7 +106,7 @@ export async function resetDatabaseAction(adminIdToKeep: string) {
         await supabase.from('schedules').delete().neq('id', '00000000-0000-0000-0000-000000000000');
         await supabase.from('unavailabilities').delete().neq('id', '00000000-0000-0000-0000-000000000000');
         await supabase.from('events').delete().neq('id', '00000000-0000-0000-0000-000000000000');
-        await supabase.from('volunteers').delete().neq('id', adminIdToKeep);
+        const { error } = await supabase.from('volunteers').delete().neq('id', adminIdToKeep);
 
         if (error) throw error;
         return { success: true };
